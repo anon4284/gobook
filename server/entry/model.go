@@ -15,7 +15,7 @@ func (e *Entry) createTable() (*dynamodb.CreateTableOutput, error) {
 				KeyType:       aws.String("HASH"),
 			},
 			{
-				AttributeName: aws.String("DateTime"),
+				AttributeName: aws.String("Year"),
 				KeyType:       aws.String("RANGE"),
 			},
 		},
@@ -25,8 +25,8 @@ func (e *Entry) createTable() (*dynamodb.CreateTableOutput, error) {
 				AttributeType: aws.String("S"),
 			},
 			{
-				AttributeName: aws.String("DateTime"),
-				AttributeType: aws.String("S"),
+				AttributeName: aws.String("Year"),
+				AttributeType: aws.String("N"),
 			},
 		},
 		ProvisionedThroughput: &dynamodb.ProvisionedThroughput{

@@ -11,6 +11,6 @@ div.container
           input.form-control(type="text", [(ngModel)]="email")
         div.form-group
           label Content:
-          textarea.form-control(rows="5") {{content}}
+          textarea.form-control(rows="5", [(ngModel)]="content")
         button.btn.btn-success(type="submit", (click)="send()") Send    
           

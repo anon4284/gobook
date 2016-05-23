@@ -27,11 +27,16 @@ func (r *Router) ServeHTMLifNotFound(path string) {
 	})
 }
 
-//TestRoute enables route to test
-func (r *Router) TestRoute() {
+//EnableTestRoute enables route to test
+func (r *Router) EnableTestRoute() {
 	r.Router.HandleFunc("/api/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello World"))
 	})
+}
+
+//AddRouter adds another router to the server
+func (r *Router) AddRouter(router *mux.Router) {
+	r.Server.UseHandler(router)
 }
 
 //Start assignes handler to Server and starts the server
