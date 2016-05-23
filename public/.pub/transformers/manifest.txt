@@ -1,0 +1,2 @@
+1.16.0
+angular2/transform/codegen,observe,smoke/src/default_transformer

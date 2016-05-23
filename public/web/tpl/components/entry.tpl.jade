@@ -1,0 +1,16 @@
+//output:entry.tpl.html
+div.container
+  div.row
+    div.col-sm-6.col-md-4.col-md-offset-4
+      form.form-entry(method="post")
+        div.form-group
+          label Name:
+          input.form-control(type="text", [(ngModel)]="name")
+        div.form-group
+          label Email:
+          input.form-control(type="text", [(ngModel)]="email")
+        div.form-group
+          label Content:
+          textarea.form-control(rows="5") {{content}}
+        button.btn.btn-success(type="submit", (click)="send()") Send    
+          
