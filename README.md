@@ -1,4 +1,4 @@
-# A guestbook sample written in go and dart
+# A Guestbook sample written in go and dart
 
 
 # Running the this app
