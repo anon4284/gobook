@@ -1,0 +1,83 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "services/entry.service.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "partials/navbar.component.dart",
+        "5": false
+      },
+      {
+        "1": "components/entry.component.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "AppComponent",
+        "6": [
+          "OnInit"
+        ],
+        "7": [
+          {
+            "2": "Navbar"
+          },
+          {
+            "2": "EntryComponent"
+          }
+        ]
+      }
+    ],
+    "6": "app.component.dart"
+  },
+  "type": {
+    "AppComponent": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "goprofile",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "AppComponent",
+        "moduleUrl": "asset:goprofile/lib/app.component.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "\n<gb-navbar></gb-navbar>\n<div class=\"alert alert-success\"></div>\n<div class=\"alert alert-danger\"></div>\n<gb-entry></gb-entry>",
+        "templateUrl": "asset:goprofile/lib/app.tpl.html",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

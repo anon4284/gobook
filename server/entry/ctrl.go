@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 )
 
-//Init Create database table
+//Init Create entryInputbase table
 func (e *Entry) Init() {
 	msg, err := e.createTable()
 	if err != nil {
@@ -19,8 +19,8 @@ func (e *Entry) Init() {
 	}
 }
 
-//Add adds an entry to the database
-func (e *Entry) Add(email string, name string, content string) (*dynamodb.PutItemOutput, error) {
+//Add adds an entry to the entryInputbase
+func (e *Entry) Add(entryInput EntryAddInput) (*dynamodb.PutItemOutput, error) {
 	t := time.Now().String()
 	year := time.Now().Year()
 	params := &dynamodb.PutItemInput{
@@ -32,7 +32,7 @@ func (e *Entry) Add(email string, name string, content string) (*dynamodb.PutIte
 		},
 		Item: map[string]*dynamodb.AttributeValue{
 			"Email": &dynamodb.AttributeValue{
-				S: aws.String(email),
+				S: aws.String(entryInput.Email),
 			},
 			"Year": &dynamodb.AttributeValue{
 				N: aws.String(strconv.Itoa(year)),
@@ -41,10 +41,10 @@ func (e *Entry) Add(email string, name string, content string) (*dynamodb.PutIte
 				S: aws.String(t),
 			},
 			"Name": &dynamodb.AttributeValue{
-				S: aws.String(name),
+				S: aws.String(entryInput.Name),
 			},
 			"Content": &dynamodb.AttributeValue{
-				S: aws.String(content),
+				S: aws.String(entryInput.Content),
 			},
 		},
 	}
@@ -57,7 +57,7 @@ func (e *Entry) Scan() (resp *dynamodb.ScanOutput, err error) {
 		TableName: aws.String("gobook-entries"),
 		AttributesToGet: []*string{
 			aws.String("Name"),
-			aws.String("DateTime"),
+			aws.String("Year"),
 			aws.String("Content"),
 		},
 	}

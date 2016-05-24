@@ -1,8 +1,11 @@
 name: goprofile
 dependencies:
-  angular2: 'any'
-  browser: 'any'
-  bootstrap: 'any'
+    angular2: 'any'
+    browser: 'any'
+    bootstrap: 'any'
 transformers:
 - angular2:
-    entry_points: web/scripts/index.dart
+    platform_directives:
+    - 'package:angular2/common.dart#CORE_DIRECTIVES'
+    - 'package:angular2/common.dart#FORM_DIRECTIVES'
+    entry_points: web/main.dart
