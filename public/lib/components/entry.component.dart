@@ -37,14 +37,17 @@ class EntryComponent implements OnInit{
 
   void addEntryToDom(Map entry) {
     var tr = new TableRowElement();
+    var tdEmail = new TableCellElement();
     var tdName = new TableCellElement();
     var tdYear = new TableCellElement();
     var tdContent = new TableCellElement();
 
+    tdEmail.text = entry["Email"]["S"];
     tdName.text = entry["Name"]["S"];
     tdYear.text = entry["Year"]["N"];
     tdContent.text = entry["Content"]["S"];
 
+    tr.children.add(tdEmail);
     tr.children.add(tdName);
     tr.children.add(tdYear);
     tr.children.add(tdContent);
@@ -60,14 +63,18 @@ class EntryComponent implements OnInit{
 
   void addEntryToDomAfterAdd(String year) {
     var tr = new TableRowElement();
+    var tdEmail = new TableCellElement();
     var tdName = new TableCellElement();
     var tdYear = new TableCellElement();
     var tdContent = new TableCellElement();
 
+    tdEmail.text = this.email;
     tdName.text = this.name;
     tdYear.text = year;
     tdContent.text = this.content;
 
+
+    tr.children.add(tdEmail);
     tr.children.add(tdName);
     tr.children.add(tdYear);
     tr.children.add(tdContent);

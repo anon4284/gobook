@@ -56,6 +56,7 @@ func (e *Entry) Scan() (resp *dynamodb.ScanOutput, err error) {
 	params := &dynamodb.ScanInput{
 		TableName: aws.String("gobook-entries"),
 		AttributesToGet: []*string{
+			aws.String("Email"),
 			aws.String("Name"),
 			aws.String("Year"),
 			aws.String("Content"),
