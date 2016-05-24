@@ -1,2 +1,6 @@
+*.lock
+public/.pub
+public/packages
+public/web/packages
 creds.json
 ca-certificates.crt
